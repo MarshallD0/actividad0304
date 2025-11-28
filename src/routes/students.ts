@@ -1,9 +1,14 @@
 import express from 'express';
-import { StudentHttpHandler } from '../handlers/students';
+import { StudentController } from '../controllers/studentController';
+import { StudentService } from '../services/studentService';
+import { StudentRepository } from '../repositories/studentRepository';
 
 const router = express.Router();
-const studentHandler = new StudentHttpHandler();
 
-router.get('/status', studentHandler.getStudentsStatus);
+const studentRepository = new StudentRepository();
+const studentService = new StudentService(studentRepository);
+const studentController = new StudentController(studentService);
+
+router.get('/status', studentController.getStudentsStatus);
 
 export default router;

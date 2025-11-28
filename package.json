@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "ts-node index.ts"
+    "test": "jest",
+    "run": "ts-node index.ts",
+    "lint": "eslint 'src/**/*.{ts,js}'",
+    "format": "prettier --write 'src/**/*.{ts,js}'"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +18,15 @@
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.7.2",
+    "ts-jest": "^29.4.5"
   }
 }
